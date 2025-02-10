@@ -602,6 +602,45 @@
 			0%, 100% { transform: scale(1); opacity: 0.3; }
 			50% { transform: scale(1.2); opacity: 0.6; }
 		}
+
+		/* Footer CTA styling */
+		.footer-cta {
+			text-align: center;
+			margin: 60px 0;
+			padding: 40px;
+			background: linear-gradient(rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+			border-radius: 10px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.footer-cta h2 {
+			color: #ffd700;
+			font-size: 2.2em;
+			margin-bottom: 20px;
+			position: relative;
+		}
+
+		.footer-cta .hero-cta {
+			margin-top: 20px;
+		}
+
+		.footer-cta::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 200%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+			animation: shimmer 3s infinite linear;
+		}
+
+		@keyframes shimmer {
+			to {
+				transform: translateX(50%);
+			}
+		}
 	</style>
 </head>
 
@@ -693,20 +732,24 @@
 			<div class="explanation-item fade-in" style="animation-delay: 0.2s">
 				<div class="icon">🌊</div>
 				<h3>Conservation First</h3>
-				<p>Our catch and release program promotes sustainable fishing practices and helps protect walleye populations for future generations. Every verified release contributes to conservation efforts.</p>
+				<p>Protect walleye populations through verified catch and release. Every release counts towards a sustainable future.</p>
 			</div>
 			
 			<div class="explanation-item fade-in" style="animation-delay: 0.4s">
 				<div class="icon">✅</div>
 				<h3>Verified Achievement</h3>
-				<p>Document your catches with our proven BHRV protocol. Build a verified fishing history that showcases your commitment to ethical angling and conservation.</p>
+				<p>Build your reputation with our trusted BHRV protocol. Show your commitment to ethical angling.</p>
 			</div>
 			
 			<div class="explanation-item fade-in wave" style="animation-delay: 0.6s">
 				<div class="icon">🎯</div>
 				<h3>Earn Rewards</h3>
-				<p>Get recognized for your conservation efforts. Each verified catch and release earns WALLI tokens, which can be used for tournament entries, gear, and more in the Derby.fish ecosystem.</p>
+				<p>Turn conservation into opportunity. Earn WALLI tokens for verified catches to use in tournaments and the Derby.fish ecosystem.</p>
 			</div>
+		</div>
+		<div class="footer-cta">
+			<h2>Ready to Join the Conservation Movement?</h2>
+			<a href="https://derby.fish" class="hero-cta">Join the League</a>
 		</div>
 		<footer>
 			<p>© 2025 WALLI.PRO | <a href="https://derby.fish">Derby.fish</a></p>
