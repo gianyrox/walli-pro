@@ -126,7 +126,7 @@
 		.main-content {
 			display: flex;
 			flex-direction: column;
-			gap: 40px;
+			gap: 30px;
 			align-items: center;
 		}
 
@@ -632,7 +632,7 @@
 			background: linear-gradient(rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
 			padding: 40px;
 			border-radius: 10px;
-			margin: 40px 0;
+			margin: 30px 0;
 			border: 1px solid rgba(255, 215, 0, 0.2);
 			position: relative;
 			overflow: hidden;
@@ -679,6 +679,51 @@
 		.footer-cta::before {
 			display: none;
 		}
+
+		/* Update token address section */
+		.token-section {
+			text-align: center;
+			padding: 20px;
+		}
+
+		.token-description {
+			color: #ffffff;
+			font-size: 1.1em;
+			margin-bottom: 20px;
+			opacity: 0.8;
+		}
+
+		.token-address {
+			font-family: monospace;
+			font-size: 1.8em;
+			color: #ffd700;
+			padding: 15px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			display: inline-block;
+			position: relative;
+			user-select: all;
+		}
+
+		.token-address:hover {
+			color: #00ff00;
+			transform: translateY(-2px);
+		}
+
+		.token-address::after {
+			content: 'Click to Copy';
+			position: absolute;
+			bottom: -25px;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 0.6em;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.token-address:hover::after {
+			opacity: 0.8;
+		}
 	</style>
 </head>
 
@@ -701,6 +746,14 @@
 		</div>
 
 		<div class="main-content">
+			<div class="section token-section">
+				<h2 class="section-title">WALLI Token</h2>
+				<p class="token-description">A Solana token that rewards verified catch and release fishing.</p>
+				<div class="token-address" id="tokenAddress" onclick="copyAddress()">
+					B7hvsBe1rX4zWWqz3Bv4fy6cmcM7NBEP37gwWWm9ww3w
+				</div>
+			</div>
+
 			<div class="section price-and-swap">
 				<div class="token-address-section">
 					<h2 class="section-title">WALLI Token Address</h2>
@@ -873,6 +926,19 @@
 			item.style.animationPlayState = 'paused';
 			observer.observe(item);
 		});
+
+		async function copyAddress() {
+			const tokenAddress = document.getElementById('tokenAddress');
+			try {
+				await navigator.clipboard.writeText(tokenAddress.textContent.trim());
+				tokenAddress.style.color = '#00ff00';
+				setTimeout(() => {
+					tokenAddress.style.color = '#ffd700';
+				}, 1000);
+			} catch (err) {
+				console.error('Failed to copy text:', err);
+			}
+		}
 	</script>
 </body>
 
