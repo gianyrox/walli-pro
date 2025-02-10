@@ -289,7 +289,9 @@
 		}
 
 		.swap-section {
-			height: 600px;
+			min-height: 400px;
+			height: auto;
+			aspect-ratio: 1 / 1.2;
 			background-color: rgba(255, 215, 0, 0.1);
 			border-radius: 10px;
 			border: 1px solid rgba(255, 215, 0, 0.2);
@@ -305,7 +307,7 @@
 			}
 			
 			.swap-section {
-				height: 500px;
+				aspect-ratio: 1 / 1.5;
 			}
 		}
 
@@ -641,6 +643,59 @@
 				transform: translateX(50%);
 			}
 		}
+
+		/* Standardized section styling */
+		.section {
+			background: linear-gradient(rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+			padding: 40px;
+			border-radius: 10px;
+			margin: 40px 0;
+			border: 1px solid rgba(255, 215, 0, 0.2);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 200%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+			animation: shimmer 3s infinite linear;
+		}
+
+		.section-title {
+			color: #ffd700;
+			font-size: 2.2em;
+			margin-bottom: 30px;
+			text-align: center;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Update existing sections to use standard styling */
+		.token-address-section {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		.protocol-section {
+			text-align: center;
+		}
+
+		.protocol-description {
+			margin-bottom: 40px;
+		}
+
+		.explanation {
+			text-align: left;
+		}
+
+		/* Remove duplicate styles */
+		.footer-cta::before {
+			display: none;
+		}
 	</style>
 </head>
 
@@ -663,9 +718,9 @@
 		</div>
 
 		<div class="main-content">
-			<div class="price-and-swap">
+			<div class="section price-and-swap">
 				<div class="token-address-section">
-					<h2>WALLI Token Address</h2>
+					<h2 class="section-title">WALLI Token Address</h2>
 					<div class="token-address-container">
 						<div class="token-address" id="tokenAddress">B7hvsBe1rX4zWWqz3Bv4fy6cmcM7NBEP37gwWWm9ww3w</div>
 						<button class="copy-button" id="copyButton">Copy</button>
@@ -683,8 +738,8 @@
 				</div>
 			</div>
 
-			<div class="protocol-section">
-				<h2 class="protocol-title">The BHRV Protocol</h2>
+			<div class="section protocol-section">
+				<h2 class="section-title">The BHRV Protocol</h2>
 				<p class="protocol-description">
 					A four-step verification process that ensures fair competition and conservation.
 				</p>
@@ -727,29 +782,31 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="explanation">
-			<div class="explanation-item fade-in" style="animation-delay: 0.2s">
-				<div class="icon">🌊</div>
-				<h3>Conservation First</h3>
-				<p>Protect walleye populations through verified catch and release. Every release counts towards a sustainable future.</p>
+
+			<div class="section explanation">
+				<div class="explanation-item fade-in" style="animation-delay: 0.2s">
+					<div class="icon">🌊</div>
+					<h3>Conservation First</h3>
+					<p>Protect walleye populations through verified catch and release. Every release counts towards a sustainable future.</p>
+				</div>
+				
+				<div class="explanation-item fade-in" style="animation-delay: 0.4s">
+					<div class="icon">✅</div>
+					<h3>Verified Achievement</h3>
+					<p>Build your reputation with our trusted BHRV protocol. Show your commitment to ethical angling.</p>
+				</div>
+				
+				<div class="explanation-item fade-in wave" style="animation-delay: 0.6s">
+					<div class="icon">🎯</div>
+					<h3>Earn Rewards</h3>
+					<p>Turn conservation into opportunity. Earn WALLI tokens for verified catches to use in tournaments and the Derby.fish ecosystem.</p>
+				</div>
 			</div>
-			
-			<div class="explanation-item fade-in" style="animation-delay: 0.4s">
-				<div class="icon">✅</div>
-				<h3>Verified Achievement</h3>
-				<p>Build your reputation with our trusted BHRV protocol. Show your commitment to ethical angling.</p>
+
+			<div class="section footer-cta">
+				<h2 class="section-title">Ready to Join the Conservation Movement?</h2>
+				<a href="https://derby.fish" class="hero-cta">Join the League</a>
 			</div>
-			
-			<div class="explanation-item fade-in wave" style="animation-delay: 0.6s">
-				<div class="icon">🎯</div>
-				<h3>Earn Rewards</h3>
-				<p>Turn conservation into opportunity. Earn WALLI tokens for verified catches to use in tournaments and the Derby.fish ecosystem.</p>
-			</div>
-		</div>
-		<div class="footer-cta">
-			<h2>Ready to Join the Conservation Movement?</h2>
-			<a href="https://derby.fish" class="hero-cta">Join the League</a>
 		</div>
 		<footer>
 			<p>© 2025 WALLI.PRO | <a href="https://derby.fish">Derby.fish</a></p>
