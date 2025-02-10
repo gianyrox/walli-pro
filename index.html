@@ -250,9 +250,9 @@
 
 		.swap-section {
 			width: 100%;
-			min-height: 300px;
-			height: calc(100vh - 600px); /* Dynamic height based on viewport */
-			max-height: 800px; /* Maximum height */
+			min-height: 600px; /* Taller minimum height */
+			height: calc(100vh - 400px); /* More viewport height */
+			max-height: 1000px; /* Increased maximum height */
 			background-color: rgba(255, 215, 0, 0.1);
 			border-radius: 10px;
 			border: 1px solid rgba(255, 215, 0, 0.2);
@@ -269,14 +269,15 @@
 		/* Responsive adjustments */
 		@media (max-width: 1200px) {
 			.swap-section {
-				height: calc(100vh - 500px);
+				min-height: 500px;
+				height: calc(100vh - 450px);
 			}
 		}
 
 		@media (max-width: 768px) {
 			.swap-section {
-				height: calc(100vh - 400px);
-				min-height: 500px;
+				min-height: 400px;
+				height: calc(100vh - 300px);
 			}
 
 			.token-address {
@@ -683,14 +684,15 @@
 		/* Update token address section */
 		.token-section {
 			text-align: center;
-			padding: 20px;
+			padding: 30px;
+			margin-bottom: 0;
 		}
 
 		.token-description {
-			color: #ffffff;
-			font-size: 1.1em;
-			margin-bottom: 20px;
-			opacity: 0.8;
+			text-align: center;
+			margin: 20px 0 30px;
+			font-size: 1.2em;
+			color: rgba(255, 255, 255, 0.9);
 		}
 
 		.token-address {
@@ -750,9 +752,8 @@
 				<div class="token-address" id="tokenAddress" onclick="copyAddress()">
 					B7hvsBe1rX4zWWqz3Bv4fy6cmcM7NBEP37gwWWm9ww3w
 				</div>
-				<p class="token-description">A Solana token that rewards verified catch and release fishing.</p>
 			</div>
-
+			<p class="token-description">A Solana token that rewards verified catch and release fishing.</p>
 				<div class="swap-section">
 					<iframe 
 						src="https://raydium.io/swap/?embed=true&inputMint=B7hvsBe1rX4zWWqz3Bv4fy6cmcM7NBEP37gwWWm9ww3w&outputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
