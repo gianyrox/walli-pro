@@ -81,12 +81,20 @@
         }
 
         .stripe-embed {
-            width: 100%;
-            min-height: 600px;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            margin: 30px 0;
+            display: none;
+        }
+
+        .stripe-button-container {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        stripe-buy-button {
+            --button-height: 50px;
+            --button-width: 300px;
+            --button-border-radius: 25px;
+            --button-theme: dark;
         }
 
         .back-link {
@@ -137,12 +145,14 @@
                 </div>
             </div>
 
-            <!-- Update Stripe payment link -->
-            <iframe 
-                src="https://buy.stripe.com/test_bIY2aj9R2gvo7FmdQQ"
-                class="stripe-embed"
-                frameborder="0"
-            ></iframe>
+            <div class="stripe-button-container">
+                <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                <stripe-buy-button
+                    buy-button-id="buy_btn_1Qr6fiEqaLaSfvjBJtJpDASg"
+                    publishable-key="pk_test_51PltjaEqaLaSfvjB4duxJ7TLLrjpPC8iBTPGfF8isfkE2HvzPSYKXphf8dSZegn7w7EukFbUyGuYkT7REqnCj4fA00qHb0xfBx"
+                >
+                </stripe-buy-button>
+            </div>
 
             <a href="index.html" class="back-link">← Back to Home</a>
         </div>
