@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Walli.pro - Crypto Centered Sanctioning Body Over Fishing Derbies</title>
+	<title>WALLI - Walleye Anglers Length League International</title>
 	<style>
 		/* Resetting some default styling */
 		* {
@@ -210,13 +210,75 @@
 				height: 500px;
 			}
 		}
+
+		.protocol-section {
+			background-color: rgba(255, 255, 255, 0.1);
+			padding: 40px;
+			border-radius: 10px;
+			margin: 40px 0;
+			text-align: center;
+		}
+
+		.protocol-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 30px;
+			margin-top: 30px;
+		}
+
+		.protocol-item {
+			background-color: rgba(255, 215, 0, 0.1);
+			padding: 20px;
+			border-radius: 10px;
+			border: 1px solid rgba(255, 215, 0, 0.2);
+		}
+
+		.protocol-item h3 {
+			color: #ffd700;
+			margin-bottom: 15px;
+			font-size: 1.5em;
+		}
+
+		.protocol-item img {
+			width: 100%;
+			max-width: 200px;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 8px;
+			margin: 10px 0;
+		}
+
+		.protocol-item p {
+			color: #ffffff;
+			font-size: 1.1em;
+			margin-top: 15px;
+		}
+
+		.protocol-title {
+			color: #ffd700;
+			font-size: 2.5em;
+			margin-bottom: 20px;
+		}
+
+		.protocol-description {
+			color: #ffffff;
+			font-size: 1.2em;
+			max-width: 800px;
+			margin: 0 auto 30px;
+		}
+
+		@media (max-width: 768px) {
+			.protocol-grid {
+				grid-template-columns: 1fr;
+			}
+		}
 	</style>
 </head>
 
 <body>
 	<div class="container">
 		<header>
-			<h1>Walli.pro</h1>
+			<h1>WALLI</h1>
 			<p>The Official Sanctioning Body for Crypto-Powered Fishing Derbies</p>
 		</header>
 
@@ -252,6 +314,48 @@
 				<p>50% of all membership proceeds are allocated to the WALLI token pool, creating a sustainable ecosystem 
 				   for competitive anglers.</p>
 				<a href="https://derby.fish" class="cta-button">Become a Member</a>
+			</div>
+
+			<div class="protocol-section">
+				<h2 class="protocol-title">The BHRV Protocol</h2>
+				<p class="protocol-description">
+					Derby.fish implements the official BHRV Protocol, a comprehensive system for validating catches. 
+					WALLI serves as the sanctioning body, minting tokens when the protocol is satisfied.
+				</p>
+				
+				<div class="protocol-grid">
+					<div class="protocol-item">
+						<h3>Bump Shot</h3>
+						<img src="https://i.imgur.com/placeholder1.jpg" 
+							 alt="Fish on Bump Board"
+							 title="Fish measured on an official bump board">
+						<p>Precise measurement of your catch on an approved bump board ensures accurate length verification.</p>
+					</div>
+					
+					<div class="protocol-item">
+						<h3>Hero Shot</h3>
+						<img src="https://i.imgur.com/placeholder2.jpg" 
+							 alt="Angler with Fish"
+							 title="Angler holding their catch">
+						<p>A photo of the angler with their catch confirms the connection between fisher and fish.</p>
+					</div>
+					
+					<div class="protocol-item">
+						<h3>Release Video</h3>
+						<img src="https://i.imgur.com/placeholder3.jpg" 
+							 alt="Fish Release"
+							 title="Releasing the fish back to water">
+						<p>Video evidence of the fish being safely released back into the water promotes conservation.</p>
+					</div>
+					
+					<div class="protocol-item">
+						<h3>Validate</h3>
+						<img src="https://i.imgur.com/placeholder4.jpg" 
+							 alt="WALLI Validation"
+							 title="WALLI token minting">
+						<p>WALLI validates the catch through the Derby.fish app, minting tokens upon successful verification.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 
