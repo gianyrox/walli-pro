@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Join WALLI - League Membership</title>
+    <style>
+        /* Core styles from index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Membership page specific styles */
+        .membership-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .membership-hero h1 {
+            font-size: 3.5em;
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .membership-hero p {
+            font-size: 1.4em;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .membership-section {
+            background: linear-gradient(rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 40px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            text-align: center;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .benefit-item {
+            background-color: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .benefit-item h3 {
+            color: #ffd700;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .stripe-embed {
+            width: 100%;
+            min-height: 600px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 30px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #ffd700;
+            text-decoration: none;
+            margin-top: 30px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffe44d;
+        }
+
+        @media (max-width: 768px) {
+            .membership-hero h1 {
+                font-size: 2.5em;
+            }
+
+            .membership-hero p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="membership-hero">
+            <h1>Join WALLI League</h1>
+            <p>Become part of a community dedicated to sustainable fishing and competitive angling.</p>
+        </div>
+
+        <div class="membership-section">
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <h3>Verified Competition</h3>
+                    <p>Participate in sanctioned tournaments with our trusted BHRV protocol.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Token Rewards</h3>
+                    <p>Earn WALLI tokens for verified catches and conservation efforts.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Community Access</h3>
+                    <p>Join a network of dedicated anglers committed to sustainable fishing.</p>
+                </div>
+            </div>
+
+            <!-- Update Stripe payment link -->
+            <iframe 
+                src="https://buy.stripe.com/test_bIY2aj9R2gvo7FmdQQ"
+                class="stripe-embed"
+                frameborder="0"
+            ></iframe>
+
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </div>
+</body>
+
+</html> 
