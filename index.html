@@ -136,6 +136,32 @@
 				font-size: 1.8em;
 			}
 		}
+
+		.price-section {
+			text-align: center;
+			background-color: rgba(255, 215, 0, 0.1);
+			padding: 20px;
+			border-radius: 10px;
+			margin: 20px 0;
+			border: 1px solid rgba(255, 215, 0, 0.2);
+		}
+
+		.price-section h2 {
+			color: #ffd700;
+			margin-bottom: 10px;
+		}
+
+		.token-price {
+			font-size: 2em;
+			font-weight: bold;
+			color: #ffffff;
+		}
+
+		.price-update {
+			font-size: 0.9em;
+			color: rgba(255, 255, 255, 0.7);
+			margin-top: 5px;
+		}
 	</style>
 </head>
 
@@ -151,6 +177,12 @@
 				 alt="Professional Angler with Catch" 
 				 class="fishing-image">
 
+			<div class="price-section">
+				<h2>WALLI Token Price</h2>
+				<div class="token-price" id="walliPrice">Loading...</div>
+				<div class="price-update" id="lastUpdate"></div>
+			</div>
+
 			<div class="explanation">
 				<h2>Revolutionizing Competitive Fishing</h2>
 				<p>Join the future of fishing competitions where every catch and release is verified on the blockchain. 
@@ -165,6 +197,43 @@
 			<p>© 2024 Walli.pro | <a href="https://derby.fish">Derby.fish</a></p>
 		</footer>
 	</div>
+
+	<script>
+		const WALLI_TOKEN_ADDRESS = 'B7hvsBe1rX4zWWqz3Bv4fy6cmcM7NBEP37gwWWm9ww3w';
+		
+		async function fetchWalliPrice() {
+			try {
+				// Attempt to fetch from Raydium API
+				const response = await fetch(`https://api.raydium.io/v2/main/price?tokens=${WALLI_TOKEN_ADDRESS}`, {
+					headers: {
+						'Accept': 'application/json'
+					}
+				});
+				
+				if (!response.ok) {
+					throw new Error('Failed to fetch price');
+				}
+				
+				const data = await response.json();
+				const price = data[WALLI_TOKEN_ADDRESS]?.price || 'N/A';
+				
+				// Update the DOM
+				document.getElementById('walliPrice').textContent = 
+					price !== 'N/A' ? `$${parseFloat(price).toFixed(4)}` : 'Price Unavailable';
+				document.getElementById('lastUpdate').textContent = 
+					`Last updated: ${new Date().toLocaleTimeString()}`;
+				
+			} catch (error) {
+				console.error('Error fetching WALLI price:', error);
+				document.getElementById('walliPrice').textContent = 'Price Unavailable';
+				document.getElementById('lastUpdate').textContent = 'Unable to fetch current price';
+			}
+		}
+
+		// Fetch price immediately and then every 30 seconds
+		fetchWalliPrice();
+		setInterval(fetchWalliPrice, 30000);
+	</script>
 </body>
 
 </html>
