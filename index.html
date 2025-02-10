@@ -43,6 +43,8 @@
 		}
 
 		.hero-content {
+			position: relative;
+			z-index: 2;
 			max-width: 800px;
 			margin: 0 auto;
 		}
@@ -138,23 +140,45 @@
 
 		/* Explanation styling */
 		.explanation {
-			text-align: center;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 30px;
+			text-align: left;
 			background-color: rgba(255, 255, 255, 0.1);
 			padding: 40px;
 			border-radius: 10px;
 			margin: 20px 0;
 		}
 
-		.explanation h2 {
-			font-size: 2em;
+		.explanation-item {
+			padding: 20px;
+			background-color: rgba(255, 215, 0, 0.1);
+			border-radius: 10px;
+			border: 1px solid rgba(255, 215, 0, 0.2);
+			transition: transform 0.3s ease;
+		}
+
+		.explanation-item:hover {
+			transform: translateY(-5px);
+		}
+
+		.explanation-item h3 {
 			color: #ffd700;
+			font-size: 1.6em;
+			margin-bottom: 15px;
+		}
+
+		.explanation-item p {
+			color: #ffffff;
+			font-size: 1.1em;
+			line-height: 1.6;
 			margin-bottom: 20px;
 		}
 
-		.explanation p {
-			font-size: 1.2em;
-			color: #ffffff;
-			margin-bottom: 30px;
+		.icon {
+			font-size: 2.5em;
+			margin-bottom: 15px;
+			color: #ffd700;
 		}
 
 		/* Call to action button */
@@ -206,7 +230,7 @@
 				font-size: 1.2em;
 			}
 			
-			.explanation h2 {
+			.explanation h3 {
 				font-size: 1.8em;
 			}
 		}
@@ -346,12 +370,247 @@
 				grid-template-columns: 1fr;
 			}
 		}
+
+		/* Fishing animations */
+		.fish-animation-container {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			pointer-events: none;
+			z-index: 1;
+		}
+
+		.swimming-fish {
+			position: absolute;
+			width: 30px;
+			height: 15px;
+			background: rgba(255, 215, 0, 0.2);
+			border-radius: 50% 10% 10% 50%;
+			animation: swim 15s linear infinite;
+			opacity: 0;
+		}
+
+		.swimming-fish::before {
+			content: '';
+			position: absolute;
+			right: -5px;
+			top: 3px;
+			width: 8px;
+			height: 8px;
+			background: rgba(255, 215, 0, 0.2);
+			clip-path: polygon(0 0, 0% 100%, 100% 50%);
+		}
+
+		.ripple {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border: 2px solid rgba(255, 215, 0, 0.15);
+			border-radius: 50%;
+			animation: ripple 4s linear infinite;
+			opacity: 0;
+		}
+
+		@keyframes swim {
+			0% {
+				transform: translateX(-100px) rotate(0deg);
+				opacity: 0;
+			}
+			10% {
+				opacity: 1;
+			}
+			90% {
+				opacity: 1;
+			}
+			100% {
+				transform: translateX(calc(100vw + 100px)) rotate(0deg);
+				opacity: 0;
+			}
+		}
+
+		@keyframes ripple {
+			0% {
+				transform: scale(0);
+				opacity: 0.8;
+			}
+			100% {
+				transform: scale(4);
+				opacity: 0;
+			}
+		}
+
+		/* Add new animation styles */
+		.fade-in {
+			opacity: 0;
+			transform: translateY(20px);
+			animation: fadeIn 0.8s ease forwards;
+		}
+
+		.wave {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.wave::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 200%;
+			height: 8px;
+			background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+			animation: wave 3s linear infinite;
+		}
+
+		@keyframes fadeIn {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes wave {
+			from { transform: translateX(-50%); }
+			to { transform: translateX(0); }
+		}
+
+		/* BHRV Protocol Animations */
+		.protocol-animation {
+			width: 200px;
+			height: 200px;
+			margin: 10px auto;
+			position: relative;
+			background: rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			overflow: hidden;
+		}
+
+		/* Bump Board Animation */
+		.bump-board {
+			width: 80%;
+			height: 30px;
+			background: rgba(255, 215, 0, 0.3);
+			position: absolute;
+			bottom: 30px;
+			left: 10%;
+			border-radius: 4px;
+		}
+
+		.measuring-fish {
+			width: 100px;
+			height: 40px;
+			background: rgba(255, 215, 0, 0.4);
+			position: absolute;
+			bottom: 40px;
+			left: 20%;
+			border-radius: 50% 10% 10% 50%;
+			animation: measureFish 3s ease-in-out infinite;
+		}
+
+		@keyframes measureFish {
+			0%, 100% { transform: translateY(0); }
+			50% { transform: translateY(-10px); }
+		}
+
+		/* Hero Shot Animation */
+		.camera {
+			width: 60px;
+			height: 40px;
+			background: rgba(255, 215, 0, 0.4);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 8px;
+		}
+
+		.flash {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+			animation: flash 3s ease-in-out infinite;
+		}
+
+		@keyframes flash {
+			0%, 100% { opacity: 0; transform: scale(1); }
+			50% { opacity: 1; transform: scale(1.5); }
+		}
+
+		/* Release Animation */
+		.water-surface {
+			width: 100%;
+			height: 50%;
+			background: rgba(0, 150, 255, 0.2);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		.releasing-fish {
+			width: 80px;
+			height: 30px;
+			background: rgba(255, 215, 0, 0.4);
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50% 10% 10% 50%;
+			animation: releaseSwim 4s ease-in-out infinite;
+		}
+
+		@keyframes releaseSwim {
+			0% { transform: translate(-50%, -50%) rotate(0deg); }
+			100% { transform: translate(100%, 100%) rotate(45deg); }
+		}
+
+		/* Validation Animation */
+		.checkmark {
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.checkmark::before {
+			content: '✓';
+			font-size: 60px;
+			color: rgba(255, 215, 0, 0.6);
+			animation: validate 3s ease-in-out infinite;
+		}
+
+		@keyframes validate {
+			0% { transform: scale(0.8); opacity: 0.5; }
+			50% { transform: scale(1.2); opacity: 1; }
+			100% { transform: scale(0.8); opacity: 0.5; }
+		}
+
+		.token-sparkle {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
+			animation: sparkle 3s ease-in-out infinite;
+		}
+
+		@keyframes sparkle {
+			0%, 100% { transform: scale(1); opacity: 0.3; }
+			50% { transform: scale(1.2); opacity: 0.6; }
+		}
 	</style>
 </head>
 
 <body>
 	<div class="container">
 		<div class="hero-container">
+			<div class="fish-animation-container">
+				<!-- Fish will be added by JavaScript -->
+			</div>
 			<div class="hero-content">
 				<header>
 					<h1>WALLI</h1>
@@ -385,15 +644,6 @@
 				</div>
 			</div>
 
-			<div class="explanation">
-				<h2>Revolutionizing Competitive Fishing</h2>
-				<p>Join the future of fishing competitions where every catch and release is verified on the blockchain. 
-				   Earn WALLI tokens for your catches while participating in sanctioned derbies.</p>
-				<p>50% of all membership proceeds are allocated to the WALLI token pool, creating a sustainable ecosystem 
-				   for competitive anglers.</p>
-				<a href="https://derby.fish" class="cta-button">Become a Member</a>
-			</div>
-
 			<div class="protocol-section">
 				<h2 class="protocol-title">The BHRV Protocol</h2>
 				<p class="protocol-description">
@@ -403,41 +653,63 @@
 				<div class="protocol-grid">
 					<div class="protocol-item">
 						<h3>Bump Shot</h3>
-						<img src="https://i.imgur.com/placeholder1.jpg" 
-							 alt="Fish on Bump Board"
-							 title="Fish measured on an official bump board">
+						<div class="protocol-animation">
+							<div class="bump-board"></div>
+							<div class="measuring-fish"></div>
+						</div>
 						<p>Measure your catch on an approved bump board.</p>
 					</div>
 					
 					<div class="protocol-item">
 						<h3>Hero Shot</h3>
-						<img src="https://i.imgur.com/placeholder2.jpg" 
-							 alt="Angler with Fish"
-							 title="Angler holding their catch">
+						<div class="protocol-animation">
+							<div class="camera"></div>
+							<div class="flash"></div>
+						</div>
 						<p>Take a photo with your catch.</p>
 					</div>
 					
 					<div class="protocol-item">
 						<h3>Release Video</h3>
-						<img src="https://i.imgur.com/placeholder3.jpg" 
-							 alt="Fish Release"
-							 title="Releasing the fish back to water">
+						<div class="protocol-animation">
+							<div class="water-surface"></div>
+							<div class="releasing-fish"></div>
+						</div>
 						<p>Record the safe release of your catch.</p>
 					</div>
 					
 					<div class="protocol-item">
 						<h3>Validate</h3>
-						<img src="https://i.imgur.com/placeholder4.jpg" 
-							 alt="WALLI Validation"
-							 title="WALLI token minting">
+						<div class="protocol-animation">
+							<div class="checkmark"></div>
+							<div class="token-sparkle"></div>
+						</div>
 						<p>Get verified and earn WALLI tokens.</p>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		<div class="explanation">
+			<div class="explanation-item fade-in" style="animation-delay: 0.2s">
+				<div class="icon">🌊</div>
+				<h3>Conservation First</h3>
+				<p>Our catch and release program promotes sustainable fishing practices and helps protect walleye populations for future generations. Every verified release contributes to conservation efforts.</p>
+			</div>
+			
+			<div class="explanation-item fade-in" style="animation-delay: 0.4s">
+				<div class="icon">✅</div>
+				<h3>Verified Achievement</h3>
+				<p>Document your catches with our proven BHRV protocol. Build a verified fishing history that showcases your commitment to ethical angling and conservation.</p>
+			</div>
+			
+			<div class="explanation-item fade-in wave" style="animation-delay: 0.6s">
+				<div class="icon">🎯</div>
+				<h3>Earn Rewards</h3>
+				<p>Get recognized for your conservation efforts. Each verified catch and release earns WALLI tokens, which can be used for tournament entries, gear, and more in the Derby.fish ecosystem.</p>
+			</div>
+		</div>
 		<footer>
-			<p>© 2025 Walli.pro | <a href="https://derby.fish">Derby.fish</a></p>
+			<p>© 2025 WALLI.PRO | <a href="https://derby.fish">Derby.fish</a></p>
 		</footer>
 	</div>
 
@@ -458,6 +730,65 @@
 			} catch (err) {
 				console.error('Failed to copy text: ', err);
 			}
+		});
+
+		// Animation script
+		function createFishAnimation() {
+			const container = document.querySelector('.fish-animation-container');
+			
+			// Create swimming fish
+			function createFish() {
+				const fish = document.createElement('div');
+				fish.className = 'swimming-fish';
+				fish.style.top = `${Math.random() * 100}%`;
+				fish.style.animationDelay = `${Math.random() * 5}s`;
+				container.appendChild(fish);
+				
+				// Remove fish after animation
+				setTimeout(() => {
+					fish.remove();
+				}, 15000);
+			}
+
+			// Create ripple effect
+			function createRipple() {
+				const ripple = document.createElement('div');
+				ripple.className = 'ripple';
+				ripple.style.left = `${Math.random() * 100}%`;
+				ripple.style.top = `${Math.random() * 100}%`;
+				container.appendChild(ripple);
+				
+				// Remove ripple after animation
+				setTimeout(() => {
+					ripple.remove();
+				}, 4000);
+			}
+
+			// Create fish periodically
+			setInterval(createFish, 3000);
+			
+			// Create ripples periodically
+			setInterval(createRipple, 2000);
+		}
+
+		// Initialize animations
+		createFishAnimation();
+
+		// Add intersection observer for fade-in animations
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.style.animationPlayState = 'running';
+					observer.unobserve(entry.target);
+				}
+			});
+		}, {
+			threshold: 0.1
+		});
+
+		document.querySelectorAll('.fade-in').forEach(item => {
+			item.style.animationPlayState = 'paused';
+			observer.observe(item);
 		});
 	</script>
 </body>
