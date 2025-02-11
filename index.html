@@ -34,7 +34,7 @@
 			position: relative;
 			padding: 80px 20px;
 			background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.95)),
-						url("https://www.outdoorlife.com/wp-content/uploads/2023/08/29/03_griz_holds_fish.jpg");
+				url("https://www.outdoorlife.com/wp-content/uploads/2023/08/29/03_griz_holds_fish.jpg");
 			background-size: cover;
 			background-position: center;
 			background-attachment: fixed;
@@ -225,11 +225,11 @@
 			header h1 {
 				font-size: 2.5em;
 			}
-			
+
 			header p {
 				font-size: 1.2em;
 			}
-			
+
 			.explanation h3 {
 				font-size: 1.8em;
 			}
@@ -250,9 +250,12 @@
 
 		.swap-section {
 			width: 100%;
-			min-height: 600px; /* Taller minimum height */
-			height: calc(100vh - 400px); /* More viewport height */
-			max-height: 1000px; /* Increased maximum height */
+			min-height: 600px;
+			/* Taller minimum height */
+			height: calc(100vh - 400px);
+			/* More viewport height */
+			max-height: 1000px;
+			/* Increased maximum height */
 			background-color: rgba(255, 215, 0, 0.1);
 			border-radius: 10px;
 			border: 1px solid rgba(255, 215, 0, 0.2);
@@ -415,12 +418,15 @@
 				transform: translateX(-100px) rotate(0deg);
 				opacity: 0;
 			}
+
 			10% {
 				opacity: 1;
 			}
+
 			90% {
 				opacity: 1;
 			}
+
 			100% {
 				transform: translateX(calc(100vw + 100px)) rotate(0deg);
 				opacity: 0;
@@ -432,6 +438,7 @@
 				transform: scale(0);
 				opacity: 0.8;
 			}
+
 			100% {
 				transform: scale(4);
 				opacity: 0;
@@ -469,8 +476,13 @@
 		}
 
 		@keyframes wave {
-			from { transform: translateX(-50%); }
-			to { transform: translateX(0); }
+			from {
+				transform: translateX(-50%);
+			}
+
+			to {
+				transform: translateX(0);
+			}
 		}
 
 		/* BHRV Protocol Animations */
@@ -507,8 +519,15 @@
 		}
 
 		@keyframes measureFish {
-			0%, 100% { transform: translateY(0); }
-			50% { transform: translateY(-10px); }
+
+			0%,
+			100% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(-10px);
+			}
 		}
 
 		/* Hero Shot Animation */
@@ -527,13 +546,22 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+			background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
 			animation: flash 3s ease-in-out infinite;
 		}
 
 		@keyframes flash {
-			0%, 100% { opacity: 0; transform: scale(1); }
-			50% { opacity: 1; transform: scale(1.5); }
+
+			0%,
+			100% {
+				opacity: 0;
+				transform: scale(1);
+			}
+
+			50% {
+				opacity: 1;
+				transform: scale(1.5);
+			}
 		}
 
 		/* Release Animation */
@@ -559,8 +587,13 @@
 		}
 
 		@keyframes releaseSwim {
-			0% { transform: translate(-50%, -50%) rotate(0deg); }
-			100% { transform: translate(100%, 100%) rotate(45deg); }
+			0% {
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+
+			100% {
+				transform: translate(100%, 100%) rotate(45deg);
+			}
 		}
 
 		/* Validation Animation */
@@ -581,22 +614,42 @@
 		}
 
 		@keyframes validate {
-			0% { transform: scale(0.8); opacity: 0.5; }
-			50% { transform: scale(1.2); opacity: 1; }
-			100% { transform: scale(0.8); opacity: 0.5; }
+			0% {
+				transform: scale(0.8);
+				opacity: 0.5;
+			}
+
+			50% {
+				transform: scale(1.2);
+				opacity: 1;
+			}
+
+			100% {
+				transform: scale(0.8);
+				opacity: 0.5;
+			}
 		}
 
 		.token-sparkle {
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
+			background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
 			animation: sparkle 3s ease-in-out infinite;
 		}
 
 		@keyframes sparkle {
-			0%, 100% { transform: scale(1); opacity: 0.3; }
-			50% { transform: scale(1.2); opacity: 0.6; }
+
+			0%,
+			100% {
+				transform: scale(1);
+				opacity: 0.3;
+			}
+
+			50% {
+				transform: scale(1.2);
+				opacity: 0.6;
+			}
 		}
 
 		/* Footer CTA styling */
@@ -765,23 +818,13 @@
 					B7hvsBe1rX4zWWqz3Bv4fy6cmcM7NBEP37gwWWm9ww3w
 				</div>
 			</div>
-			<p class="token-description">A Solana token that rewards verified catch and release fishing.</p>
-				<div class="swap-section">
-					<iframe 
-						src="https://raydium.io/swap/?embed=true&inputMint=B7hvsBe1rX4zWWqz3Bv4fy6cmcM7NBEP37gwWWm9ww3w&outputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
-						frameborder="0"
-						width="100%"
-						height="100%"
-						style="border-radius: 10px;"
-					></iframe>
-				</div>
-
+			<p class="token-description">A Solana token that rewards verified catch and release fishing.</p>:
 			<div class="section protocol-section">
 				<h2 class="section-title">The BHRV Protocol</h2>
 				<p class="protocol-description">
 					A four-step verification process that ensures fair competition and conservation.
 				</p>
-				
+
 				<div class="protocol-grid">
 					<div class="protocol-item">
 						<h3>Bump Shot</h3>
@@ -791,7 +834,7 @@
 						</div>
 						<p>Measure your catch on an approved bump board.</p>
 					</div>
-					
+
 					<div class="protocol-item">
 						<h3>Hero Shot</h3>
 						<div class="protocol-animation">
@@ -800,7 +843,7 @@
 						</div>
 						<p>Take a photo with your catch.</p>
 					</div>
-					
+
 					<div class="protocol-item">
 						<h3>Release Video</h3>
 						<div class="protocol-animation">
@@ -809,7 +852,7 @@
 						</div>
 						<p>Record the safe release of your catch.</p>
 					</div>
-					
+
 					<div class="protocol-item">
 						<h3>Validate</h3>
 						<div class="protocol-animation">
@@ -825,19 +868,21 @@
 				<div class="explanation-item fade-in" style="animation-delay: 0.2s">
 					<div class="icon">🌊</div>
 					<h3>Conservation First</h3>
-					<p>Protect walleye populations through verified catch and release. Every release counts towards a sustainable future.</p>
+					<p>Protect walleye populations through verified catch and release. Every release counts towards a sustainable
+						future.</p>
 				</div>
-				
+
 				<div class="explanation-item fade-in" style="animation-delay: 0.4s">
 					<div class="icon">✅</div>
 					<h3>Verified Achievement</h3>
 					<p>Build your reputation with our trusted BHRV protocol. Show your commitment to ethical angling.</p>
 				</div>
-				
+
 				<div class="explanation-item fade-in wave" style="animation-delay: 0.6s">
 					<div class="icon">🎯</div>
 					<h3>Earn Rewards</h3>
-					<p>Turn conservation into opportunity. Earn WALLI tokens for verified catches to use in tournaments and the Derby.fish ecosystem.</p>
+					<p>Turn conservation into opportunity. Earn WALLI tokens for verified catches to use in tournaments and the
+						Derby.fish ecosystem.</p>
 				</div>
 			</div>
 
@@ -860,7 +905,7 @@
 				await navigator.clipboard.writeText(tokenAddress.textContent);
 				copyButton.textContent = 'Copied!';
 				copyButton.classList.add('copied');
-				
+
 				setTimeout(() => {
 					copyButton.textContent = 'Copy';
 					copyButton.classList.remove('copied');
@@ -873,7 +918,7 @@
 		// Animation script
 		function createFishAnimation() {
 			const container = document.querySelector('.fish-animation-container');
-			
+
 			// Create swimming fish
 			function createFish() {
 				const fish = document.createElement('div');
@@ -881,7 +926,7 @@
 				fish.style.top = `${Math.random() * 100}%`;
 				fish.style.animationDelay = `${Math.random() * 5}s`;
 				container.appendChild(fish);
-				
+
 				// Remove fish after animation
 				setTimeout(() => {
 					fish.remove();
@@ -895,7 +940,7 @@
 				ripple.style.left = `${Math.random() * 100}%`;
 				ripple.style.top = `${Math.random() * 100}%`;
 				container.appendChild(ripple);
-				
+
 				// Remove ripple after animation
 				setTimeout(() => {
 					ripple.remove();
@@ -904,7 +949,7 @@
 
 			// Create fish periodically
 			setInterval(createFish, 3000);
-			
+
 			// Create ripples periodically
 			setInterval(createRipple, 2000);
 		}
