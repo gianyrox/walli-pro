@@ -32,7 +32,7 @@
 		/* Updated header/hero styling */
 		.hero-container {
 			position: relative;
-			padding: 80px 20px;
+			padding: 60px 20px;
 			background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.95)),
 				url("https://www.outdoorlife.com/wp-content/uploads/2023/08/29/03_griz_holds_fish.jpg");
 			background-size: cover;
@@ -54,19 +54,52 @@
 		}
 
 		header h1 {
-			font-size: 4.5em;
+			font-size: 4em;
 			color: #ffd700;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 			letter-spacing: 2px;
 		}
 
-		header p {
+		.hero-subtitle {
+			font-size: 1.4em;
+			color: #ffffff;
+			margin-bottom: 30px;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+		}
+
+		.hero-explanation {
+			background: rgba(0, 0, 0, 0.4);
+			padding: 20px;
+			border-radius: 10px;
+			margin-bottom: 30px;
+		}
+
+		.hero-main-point {
 			font-size: 1.8em;
 			color: #ffffff;
+			margin-bottom: 20px;
 			line-height: 1.4;
-			margin-bottom: 40px;
-			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+			font-weight: bold;
+		}
+
+		.hero-highlights {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+			margin-bottom: 20px;
+		}
+
+		.highlight-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 8px;
+			color: #ffffff;
+		}
+
+		.highlight-icon {
+			font-size: 1.8em;
 		}
 
 		.hero-cta {
@@ -105,20 +138,47 @@
 
 		@media (max-width: 768px) {
 			.hero-container {
-				padding: 60px 20px;
+				padding: 40px 20px;
 			}
 
 			header h1 {
 				font-size: 3em;
 			}
 
-			header p {
+			.hero-subtitle {
+				font-size: 1.2em;
+			}
+
+			.hero-main-point {
 				font-size: 1.4em;
 			}
 
-			.hero-cta {
+			.hero-highlights {
+				gap: 15px;
+			}
+
+			.highlight-item {
+				font-size: 0.9em;
+			}
+		}
+
+		@media (max-width: 480px) {
+			header h1 {
+				font-size: 2.5em;
+			}
+
+			.hero-main-point {
 				font-size: 1.2em;
-				padding: 15px 35px;
+			}
+
+			.hero-highlights {
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			.highlight-item {
+				flex-direction: row;
+				gap: 10px;
 			}
 		}
 
@@ -801,14 +861,26 @@
 			<div class="hero-content">
 				<header>
 					<h1>WALLI</h1>
-					<p>Walleye Anglers Length League International</p>
+					<p class="hero-subtitle">Walleye Anglers Length League International</p>
+					<div class="hero-explanation">
+						<p class="hero-main-point">Earn rewards for verified catch & release walleye fishing</p>
+						<div class="hero-highlights">
+							<div class="highlight-item">
+								<span class="highlight-icon">🎯</span>
+								<span>Verify catches</span>
+							</div>
+							<div class="highlight-item">
+								<span class="highlight-icon">🌊</span>
+								<span>Release safely</span>
+							</div>
+							<div class="highlight-item">
+								<span class="highlight-icon">💰</span>
+								<span>Earn tokens</span>
+							</div>
+						</div>
+					</div>
 					<a href="join.html" class="hero-cta">Join the League</a>
 				</header>
-				<!-- Temporarily disabled hero image
-				<img src="https://www.outdoorlife.com/wp-content/uploads/2023/08/29/03_griz_holds_fish.jpg" 
-					 alt="Professional Angler with Trophy Walleye" 
-					 class="hero-image">
-				-->
 			</div>
 		</div>
 
